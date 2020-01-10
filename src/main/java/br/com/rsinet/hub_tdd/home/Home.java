@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Home {
 	private static WebDriver driver = null;
@@ -23,7 +25,10 @@ public class Home {
 
 		driver.findElement(By.id("menuUser")).click();
 
-		Thread.sleep(13000);
+		//WebDriverWait wait = new WebDriverWait(driver, 10);
+		
+		//WebDriverWait wait = new WebDriverWait(driver, 5);
+		//WebElement tempo = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("CREATE NEW ACCOUNT")));
 
 		driver.findElement(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]")).click();
 
@@ -51,7 +56,7 @@ public class Home {
 
 		driver.findElement(By.name("addressRegisterPage")).sendKeys("Rua do Teste, 01");
 
-		driver.findElement(By.name("state_/province/_regionRegisterPage")).sendKeys("Teste");
+		driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[3]/div[2]/sec-view[2]/div[1]/input[1]")).sendKeys("Teste");
 
 		driver.findElement(By.name("postal_codeRegisterPage")).sendKeys("55555-333");
 
