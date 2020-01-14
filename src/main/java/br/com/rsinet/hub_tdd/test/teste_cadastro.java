@@ -60,12 +60,12 @@ public class teste_cadastro {
 		Cadastro_Page.aceite(driver).click();
 		Assert.assertTrue(driver.findElement(By.cssSelector("div#formCover > sec-view > div > input")).isSelected());
 		Cadastro_Page.cadastra(driver).click();
-		Screenshot.printTela(driver);
+		//Screenshot.printTela(driver);
 	}
 
 	@After
 	public void finaliza() {
-		 driver.close();
+		 //driver.close();
 		 
 		 
 		 
@@ -86,7 +86,7 @@ public class teste_cadastro {
 		Cadastro_Page.email(driver).sendKeys(ExcelUtils.getCellData(1, 1));
 		Cadastro_Page.senha(driver).sendKeys(ExcelUtils.getCellData(2, 2));
 		Cadastro_Page.confirmasenha(driver).sendKeys(ExcelUtils.getCellData(2, 3));
-		Screenshot.printTela(driver);
+		//Screenshot.printTela(driver);
 		Cadastro_Page.primeironome(driver).sendKeys(ExcelUtils.getCellData(1, 4));
 		Cadastro_Page.ultimonome(driver).sendKeys(ExcelUtils.getCellData(1, 5));
 		Cadastro_Page.telefone(driver).sendKeys(ExcelUtils.getCellData(1, 6));

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class HomePage {
 
 	public static WebElement element = null;
-
+	
 	public static WebElement login(WebDriver driver) {
 
 		element = driver.findElement(By.id("menuUser"));
@@ -24,4 +24,12 @@ public class HomePage {
 
 	}
 
+	public static WebElement menubusca(WebDriver driver) {
+		
+		element = driver.findElement(By.id("menuSearch"));
+		
+		return element;
+		
+	}
+	
 }
