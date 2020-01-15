@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,15 +29,15 @@ public class teste_busca {
 
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 		@Test
 		public void Teste_Busca() throws Exception {
 
 			driver.get("https://www.advantageonlineshopping.com/");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			HomePage.menubusca(driver).click();
 			
-			Busca.busca_produto(driver).sendKeys(ExcelUtils.getCellData(6, 0));
+			Busca.busca_produto(driver).sendKeys(ExcelUtils.getCellData(6, 0)+Keys.ENTER);
 
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.elementToBeClickable(Busca.produto(driver)));
@@ -48,8 +49,8 @@ public class teste_busca {
 		
 		
 		@After
-		public void finalizaTesteBusca() {
 			 //driver.close();
+		public void finalizaTesteBusca() {
 		}
 	
 	}
