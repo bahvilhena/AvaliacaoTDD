@@ -18,7 +18,7 @@ public class Busca {
 	
 	public static WebElement produto(WebDriver driver) {
 		
-		element = driver.findElement(By.xpath("//*[@id=\"output\"]/div[1]/div[2]/a[2]/img[1]"));
+		element = driver.findElement(By.linkText("KENSINGTON ORBIT 72337 TRACKBALL WITH SCROLL RING"));
 		
 		return element;
 	}
