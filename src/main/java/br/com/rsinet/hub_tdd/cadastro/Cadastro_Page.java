@@ -93,4 +93,10 @@ public class Cadastro_Page {
 		return element;
 	}
 
+	public static String capturarTexto(WebDriver driver) throws Exception {
+        Thread.sleep(500);
+        WebElement textoCapture = driver.findElement(By.xpath("//*[@id=\\\"menuUserLink\\\"]/span"));
+        String textoUsuarioLogado = textoCapture.getText();
+        return textoUsuarioLogado;
+	}
 }

@@ -42,8 +42,8 @@ public class teste_cadastro {
 		driver.get("https://www.advantageonlineshopping.com/");
 		HomePage.login(driver).click();
 
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.elementToBeClickable(HomePage.novaconta(driver)));
+		//WebDriverWait wait = new WebDriverWait(driver, 20);
+		//wait.until(ExpectedConditions.elementToBeClickable(HomePage.novaconta(driver)));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", HomePage.novaconta(driver));
 
