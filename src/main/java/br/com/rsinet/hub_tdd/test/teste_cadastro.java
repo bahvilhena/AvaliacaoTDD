@@ -1,5 +1,7 @@
 package br.com.rsinet.hub_tdd.test;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -60,7 +62,7 @@ public class teste_cadastro {
 		Cadastro_Page.aceite(driver).click();
 		Assert.assertTrue(driver.findElement(By.cssSelector("div#formCover > sec-view > div > input")).isSelected());
 		Cadastro_Page.cadastra(driver).click();
-		Thread.sleep(3000);
+		//assertEquals(ExcelUtils.getCellData(1, 0), Cadastro_Page.capturarTexto(driver));
 	}
 
 //	@After
@@ -100,7 +102,8 @@ public class teste_cadastro {
 		Cadastro_Page.aceite(driver).click();
 		Assert.assertTrue(driver.findElement(By.cssSelector("div#formCover > sec-view > div > input")).isSelected());
 		Cadastro_Page.cadastra(driver).click();
-		Thread.sleep(3000);
+		//assertEquals(ExcelUtils.getCellData(1, 0), Cadastro_Page.capturarTexto(driver));
+		//Thread.sleep(3000);
 	}
 	
 	@After
