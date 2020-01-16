@@ -32,4 +32,26 @@ public class HomePage {
 		
 	}
 	
+	public static WebElement busca_produto(WebDriver driver) {
+
+		element = driver.findElement(By.id("autoComplete"));
+
+		return element;
+
+	}
+	
+	public static WebElement produto(WebDriver driver) {
+		element = driver.findElement(By.cssSelector("div#output > div > div:nth-of-type(2) > a:nth-of-type(2) > img"));
+		return element;
+	}
+	
+	public static WebElement mouse(WebDriver driver) {
+		element = driver.findElement(By.id("miceImg"));
+		return element;
+	}
+	
+	public static WebElement mouse_vermelho(WebDriver driver) {
+		element = driver.findElement(By.id("virtualFooter"));
+		return element;
+	}
 }

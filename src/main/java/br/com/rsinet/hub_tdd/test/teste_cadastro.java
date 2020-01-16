@@ -1,6 +1,6 @@
 package br.com.rsinet.hub_tdd.test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
 
@@ -104,6 +104,7 @@ public class teste_cadastro {
 		Cadastro_Page.cadastra(driver).click();
 		//assertEquals(ExcelUtils.getCellData(1, 0), Cadastro_Page.capturarTexto(driver));
 		//Thread.sleep(3000);
+		//assertTrue(message, condition);
 	}
 	
 	@After
