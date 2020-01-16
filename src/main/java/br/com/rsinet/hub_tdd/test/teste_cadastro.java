@@ -104,7 +104,7 @@ public class teste_cadastro {
 		Cadastro_Page.cadastra(driver).click();
 		//assertEquals(ExcelUtils.getCellData(1, 0), Cadastro_Page.capturarTexto(driver));
 		//Thread.sleep(3000);
-		//assertTrue(message, condition);
+		assertTrue(, condition);
 	}
 	
 	@After
