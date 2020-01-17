@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_tdd.screenshot;
+package br.com.rsinet.hub_tdd.actions;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;

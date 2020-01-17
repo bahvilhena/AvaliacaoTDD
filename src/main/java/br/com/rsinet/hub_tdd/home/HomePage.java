@@ -47,11 +47,13 @@ public class HomePage {
 	
 	public static WebElement mouse(WebDriver driver) {
 		element = driver.findElement(By.id("miceImg"));
+		element.click();
 		return element;
 	}
 	
-	public static WebElement mouse_vermelho(WebDriver driver) {
+	public static WebElement mouse_azul(WebDriver driver) {
 		element = driver.findElement(By.id("virtualFooter"));
+		driver.findElement(By.id("32")).click();
 		return element;
 	}
 }

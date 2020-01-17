@@ -1,7 +1,5 @@
 package br.com.rsinet.hub_tdd.test;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -15,35 +13,39 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import br.com.rsinet.hub_tdd.actions.DriverFactory;
+import br.com.rsinet.hub_tdd.actions.Screenshot;
 import br.com.rsinet.hub_tdd.cadastro.Cadastro_Page;
 import br.com.rsinet.hub_tdd.cadastro.ExcelUtils;
 import br.com.rsinet.hub_tdd.cadastro.InformacoesCadastrais.Constant;
 import br.com.rsinet.hub_tdd.home.HomePage;
-import br.com.rsinet.hub_tdd.screenshot.Screenshot;
 
 public class teste_cadastro {
 
 	public static WebDriver driver;
-	//private WebDriver element = null;
 
 	@Before
-	public void teste_cadastro() throws Exception {
-
+	
+	public void inicializarChrome() throws Exception {
+		driver = DriverFactory.inicializarChrome();
+	
+//	public void teste_cadastro() throws Exception {
+//
 		ExcelUtils.setExcelFile(Constant.Path_cadastro + Constant.File_cadastro, "planilha1");
-
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//
+//		driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@Test
 	public void Teste_Confirma() throws Exception {
 
-		driver.get("https://www.advantageonlineshopping.com/");
-		HomePage.login(driver).click();
+//		driver.get("https://www.advantageonlineshopping.com/");
+//		HomePage.login(driver).click();
 
-		//WebDriverWait wait = new WebDriverWait(driver, 20);
-		//wait.until(ExpectedConditions.elementToBeClickable(HomePage.novaconta(driver)));
+		// WebDriverWait wait = new WebDriverWait(driver, 20);
+		// wait.until(ExpectedConditions.elementToBeClickable(HomePage.novaconta(driver)));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", HomePage.novaconta(driver));
 
@@ -62,19 +64,10 @@ public class teste_cadastro {
 		Cadastro_Page.aceite(driver).click();
 		Assert.assertTrue(driver.findElement(By.cssSelector("div#formCover > sec-view > div > input")).isSelected());
 		Cadastro_Page.cadastra(driver).click();
-		//assertEquals(ExcelUtils.getCellData(1, 0), Cadastro_Page.capturarTexto(driver));
+		// assertEquals(ExcelUtils.getCellData(1, 0),
+		// Cadastro_Page.capturarTexto(driver));
 	}
 
-//	@After
-//	public void finaliza() throws Exception {
-//		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-//		Screenshot.printTela(driver);
-//		 //driver.close();
-//		 
-//		 
-//		 
-//	}
-	
 	@Test
 	public void Teste_NaoConfirma() throws Exception {
 
@@ -102,17 +95,17 @@ public class teste_cadastro {
 		Cadastro_Page.aceite(driver).click();
 		Assert.assertTrue(driver.findElement(By.cssSelector("div#formCover > sec-view > div > input")).isSelected());
 		Cadastro_Page.cadastra(driver).click();
-		//assertEquals(ExcelUtils.getCellData(1, 0), Cadastro_Page.capturarTexto(driver));
-		//Thread.sleep(3000);
-		assertTrue(, condition);
+		// assertEquals(ExcelUtils.getCellData(1, 0),
+		// Cadastro_Page.capturarTexto(driver));
+		// Thread.sleep(3000);
+		// assertTrue(, condition);
 	}
-	
+
 	@After
 	public void finalizaTeste() throws Exception {
 		Screenshot.printTela(driver);
-       
-		
-		 driver.close();
+		driver = DriverFactory.finalizarChrome();
+		//driver.quit();
 	}
 
 }
