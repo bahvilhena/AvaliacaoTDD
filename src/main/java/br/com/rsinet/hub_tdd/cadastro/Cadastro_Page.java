@@ -11,6 +11,7 @@ public class Cadastro_Page {
 
 	public static WebElement usuario(WebDriver driver) {
 		element = driver.findElement(By.name("usernameRegisterPage"));
+		 
 
 		return element;
 	}

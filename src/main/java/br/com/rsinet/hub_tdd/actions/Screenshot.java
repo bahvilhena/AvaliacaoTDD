@@ -15,7 +15,7 @@ public class Screenshot {
  
 
         FileUtils.copyFile(screenshot,
-                new File("C:\\Users\\rodrigo.vilhena\\Documents\\AvaliacaoTDD\\AvaliacaoTDD\\src\\main\\java\\br\\com\\rsinet\\hub_tdd\\screenshot" + Generator.dataHoraParaArquivo() + ".png"));
+                new File("C:\\Users\\rodrigo.vilhena\\Desktop\\ScreenShootTDD\\" + Generator.dataHoraParaArquivo() + ".png"));
     }
 	
 }
