@@ -8,7 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 public class Cadastro_Page {
 
 	public static WebElement element = null;
-
+	
+	
 	public static WebElement usuario(WebDriver driver) {
 		element = driver.findElement(By.name("usernameRegisterPage"));
 		 
@@ -94,10 +95,10 @@ public class Cadastro_Page {
 		return element;
 	}
 
-	public static String capturarTexto(WebDriver driver) throws Exception {
-        Thread.sleep(500);
-        WebElement textoCapture = driver.findElement(By.xpath("//*[@id=\\\"menuUserLink\\\"]/span"));
-        String textoUsuarioLogado = textoCapture.getText();
-        return textoUsuarioLogado;
-	}
+//	public static String capturarTexto(WebDriver driver) throws Exception {
+//        //Thread.sleep(500);
+//        WebElement textoCapture = driver.findElement(By.xpath("//*[@id=\\\"menuUserLink\\\"]/span"));
+//        String textoUsuarioLogado = textoCapture.getText();
+//        return textoUsuarioLogado;
+//	}
 }

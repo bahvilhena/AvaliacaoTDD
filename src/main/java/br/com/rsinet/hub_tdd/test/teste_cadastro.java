@@ -1,9 +1,10 @@
 package br.com.rsinet.hub_tdd.test;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import br.com.rsinet.hub_tdd.actions.DadosCadastro;
 import br.com.rsinet.hub_tdd.actions.DriverFactory;
@@ -13,10 +14,11 @@ public class teste_cadastro {
 
 	public static WebDriver driver;
 
-	@Before
+	@BeforeMethod
 
 	public void inicializarChrome() throws Exception {
-		driver = DriverFactory.inicializarChrome();
+		driver = DriverFactory.inicializarChromeCadastro();
+
 	}
 
 	@Test
@@ -29,7 +31,7 @@ public class teste_cadastro {
 		DadosCadastro.dados_negativos(driver);
 	}
 
-	@After
+	@AfterMethod
 	public void finalizaTeste() throws Exception {
 		Screenshot.printTela(driver);
 		driver.quit();

@@ -8,13 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import br.com.rsinet.hub_tdd.cadastro.ExcelUtils;
 import br.com.rsinet.hub_tdd.cadastro.InformacoesCadastrais.Constant;
-import br.com.rsinet.hub_tdd.home.HomePage;
 
 public class DriverFactory {
 
 	static WebDriver driver;
 
-	public static WebDriver inicializarChrome() throws Exception {
+	public static WebDriver inicializarChromeCadastro() throws Exception {
 		WebDriver driver = new ChromeDriver();
 		ExcelUtils.setExcelFile(Constant.Path_cadastro + Constant.File_cadastro, "planilha1");
 		driver.get("https://www.advantageonlineshopping.com/");
@@ -27,6 +26,20 @@ public class DriverFactory {
 			return driver;
 
 		}
+
 	}
 
+	public static WebDriver inicializarChromeProdutos() throws Exception {
+		WebDriver driver = new ChromeDriver();
+		ExcelUtils.setExcelFile(Constant.Path_cadastro + Constant.File_cadastro, "planilha2");
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get("https://www.advantageonlineshopping.com/");
+		driver.manage().window().maximize();
+
+		{
+			return driver;
+
+		}
+
+	}
 }
