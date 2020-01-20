@@ -18,13 +18,13 @@ public class HomePage {
 
 	public static WebElement element = null;
 	
-	public static WebElement login(WebDriver driver) {
-
-		element = driver.findElement(By.id("menuUser"));
-
-		return element;
-
-	}
+//	public static WebElement login(WebDriver driver) {
+//
+//		element = driver.findElement(By.id("menuUser"));
+//
+//		return element;
+//
+//	}
 
 	public static WebElement novaconta(WebDriver driver) {
 
@@ -70,7 +70,7 @@ public class HomePage {
 		return element;
 	}
 	
-	public static WebElement outros_produtos(WebDriver driver) throws InterruptedException, AWTException {
+	public static WebElement outros_produtos(WebDriver driver) throws Exception {
 		element = driver.findElement(By.xpath("/html/body/header/nav/ul/li[8]/a"));
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"headphonesImg\"]")));
@@ -89,6 +89,7 @@ public class HomePage {
 		robot.keyPress(KeyEvent.VK_DOWN);
 		robot.keyPress(KeyEvent.VK_DOWN);
 		robot.keyPress(KeyEvent.VK_ENTER);
+		Screenshot.printTela(driver);
 		
 		
 

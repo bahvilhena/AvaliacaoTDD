@@ -1,8 +1,6 @@
 package br.com.rsinet.hub_tdd.test;
 
 
-import java.awt.AWTException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -30,7 +28,7 @@ public class teste_consulta {
 
 	}
 	@Test
-	public void Teste_Busca_Negativo() throws InterruptedException, AWTException {
+	public void Teste_Busca_Negativo() throws Exception {
 		
 		HomePage.outros_produtos(driver);
 		
@@ -39,8 +37,9 @@ public class teste_consulta {
 
 	@AfterMethod
 	public void finalizaTeste() throws Exception {
+//		WebDriverWait wait = new WebDriverWait(driver, 10);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body")));
 		Screenshot.printTela(driver);
-
 		driver.quit();
 	}
 
