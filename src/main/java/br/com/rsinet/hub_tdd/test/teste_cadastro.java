@@ -15,7 +15,6 @@ public class teste_cadastro {
 	public static WebDriver driver;
 
 	@BeforeMethod
-
 	public void inicializarChrome() throws Exception {
 		driver = DriverFactory.inicializarChromeCadastro();
 

@@ -1,6 +1,8 @@
 package br.com.rsinet.hub_tdd.test;
 
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -27,13 +29,13 @@ public class teste_consulta {
 		HomePage.mouse_azul(driver);
 
 	}
-//	@Test
-//	public void Teste_Busca_Negativo() throws InterruptedException {
-//		
-//		HomePage.outros_produtos(driver);
-//		
-//
-//	}
+	@Test
+	public void Teste_Busca_Negativo() throws InterruptedException, AWTException {
+		
+		HomePage.outros_produtos(driver);
+		
+
+	}
 
 	@AfterMethod
 	public void finalizaTeste() throws Exception {
