@@ -6,6 +6,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.mongodb.diagnostics.logging.Logger;
+
 import br.com.rsinet.hub_tdd.actions.DadosCadastro;
 import br.com.rsinet.hub_tdd.actions.DriverFactory;
 import br.com.rsinet.hub_tdd.actions.Screenshot;
@@ -17,6 +19,7 @@ public class teste_cadastro {
 	@BeforeMethod
 	public void inicializarChrome() throws Exception {
 		driver = DriverFactory.inicializarChromeCadastro();
+		
 
 	}
 

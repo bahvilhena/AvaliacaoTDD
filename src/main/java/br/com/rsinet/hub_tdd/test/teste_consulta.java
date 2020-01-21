@@ -19,7 +19,7 @@ public class teste_consulta {
 		driver = DriverFactory.inicializarChromeProdutos();
 	}
 
-	 @Test
+	@Test
 	public void Teste_Busca() throws Exception {
 
 		HomePage.mouse(driver);
@@ -37,8 +37,6 @@ public class teste_consulta {
 
 	@AfterMethod
 	public void finalizaTeste() throws Exception {
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body")));
 		Screenshot.printTela(driver);
 		driver.quit();
 	}
