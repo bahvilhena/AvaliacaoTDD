@@ -62,7 +62,7 @@ public class DadosCadastro {
 		Cadastro_Page.email(driver).sendKeys(email);
 		Cadastro_Page.senha(driver).sendKeys(senhaerrada);
 		Cadastro_Page.confirmasenha(driver).sendKeys(confirmasenhaerrada);
-		Screenshot.printTela(driver);
+		//Screenshot.printTela(driver);
 		Cadastro_Page.primeironome(driver).sendKeys(primeironome);
 		Cadastro_Page.ultimonome(driver).sendKeys(ultimonome);
 		Cadastro_Page.telefone(driver).sendKeys(telefone);

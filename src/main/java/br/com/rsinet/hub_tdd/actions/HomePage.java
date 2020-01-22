@@ -12,13 +12,6 @@ public class HomePage {
 
 	public static WebElement element = null;
 
-//	public static WebElement login(WebDriver driver) {
-//
-//		element = driver.findElement(By.id("menuUser"));
-//
-//		return element;
-//
-//	}
 
 	public static WebElement novaconta(WebDriver driver) {
 
