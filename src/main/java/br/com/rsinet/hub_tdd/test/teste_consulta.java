@@ -1,6 +1,5 @@
 package br.com.rsinet.hub_tdd.test;
 
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -20,8 +19,8 @@ public class teste_consulta {
 
 	static WebDriver driver;
 	ExtentReports extensao;
-    ExtentTest logger;
-    private String testName;
+	ExtentTest logger;
+	private String testName;
 
 	@BeforeMethod
 	public void consulta() throws Exception {
@@ -35,33 +34,34 @@ public class teste_consulta {
 
 		HomePage.mouse_azul(driver);
 		ExtentHtmlReporter report = new ExtentHtmlReporter("./Report/buscaPagina.html");
-        extensao = new ExtentReports();
-        extensao.attachReporter(report);
-        logger = extensao.createTest("Busca Realizado!");
-           testName = new Throwable().getStackTrace()[0].getMethodName();
+		extensao = new ExtentReports();
+		extensao.attachReporter(report);
+		logger = extensao.createTest("Busca Realizado!");
+		testName = new Throwable().getStackTrace()[0].getMethodName();
 
 	}
+
 	@Test
 	public void Teste_Busca_Negativo() throws Exception {
-		
+
 		HomePage.outros_produtos(driver);
-		 testName = new Throwable().getStackTrace()[0].getMethodName();
+		testName = new Throwable().getStackTrace()[0].getMethodName();
 
 	}
 
 	@AfterMethod
 	public void finalizaTeste(ITestResult resultado) throws Exception {
-		
+
 		if (resultado.getStatus() == ITestResult.FAILURE) {
-            String tempo = Screenshot.getScreenshot(driver, testName );
-            logger.fail(resultado.getThrowable().getMessage(),
-                    MediaEntityBuilder.createScreenCaptureFromPath(tempo).build());
-        } else if (resultado.getStatus() == ITestResult.SUCCESS) {
-            String tempo = Screenshot.getScreenshot(driver, testName);
-            logger.pass(testName, MediaEntityBuilder.createScreenCaptureFromPath(tempo).build());
-        }
-        extensao.flush();
-		
+			String tempo = Screenshot.getScreenshot(driver, testName);
+			logger.fail(resultado.getThrowable().getMessage(),
+					MediaEntityBuilder.createScreenCaptureFromPath(tempo).build());
+		} else if (resultado.getStatus() == ITestResult.SUCCESS) {
+			String tempo = Screenshot.getScreenshot(driver, testName);
+			logger.pass(testName, MediaEntityBuilder.createScreenCaptureFromPath(tempo).build());
+		}
+		extensao.flush();
+
 		driver.quit();
 	}
 

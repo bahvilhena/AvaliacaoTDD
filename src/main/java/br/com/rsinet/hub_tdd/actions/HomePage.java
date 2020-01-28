@@ -12,7 +12,6 @@ public class HomePage {
 
 	public static WebElement element = null;
 
-
 	public static WebElement novaconta(WebDriver driver) {
 
 		element = driver.findElement(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]"));

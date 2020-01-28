@@ -8,11 +8,9 @@ import org.openqa.selenium.support.ui.Select;
 public class Cadastro_Page {
 
 	public static WebElement element = null;
-	
-	
+
 	public static WebElement usuario(WebDriver driver) {
 		element = driver.findElement(By.name("usernameRegisterPage"));
-		 
 
 		return element;
 	}

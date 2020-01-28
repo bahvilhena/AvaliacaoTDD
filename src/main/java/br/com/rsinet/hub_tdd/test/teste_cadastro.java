@@ -1,6 +1,5 @@
 package br.com.rsinet.hub_tdd.test;
 
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -20,23 +19,23 @@ public class teste_cadastro {
 
 	public static WebDriver driver;
 	ExtentReports extensao;
-    ExtentTest logger;
-    private String testName;
+	ExtentTest logger;
+	private String testName;
 
-    @BeforeMethod
-    public void inicializarChrome() throws Exception {
-        driver = DriverFactory.inicializarChromeCadastro();
+	@BeforeMethod
+	public void inicializarChrome() throws Exception {
+		driver = DriverFactory.inicializarChromeCadastro();
 
-     }
+	}
 
 	@Test
 	public void Teste_Confirma() throws Exception {
 		DadosCadastro.dados_positivos(driver);
-		 ExtentHtmlReporter report = new ExtentHtmlReporter("./Report/cadastroCliente.html");
-	        extensao = new ExtentReports();
-	        extensao.attachReporter(report);
-	        logger = extensao.createTest("Cadastro Realizado!");
-	           testName = new Throwable().getStackTrace()[0].getMethodName();
+		ExtentHtmlReporter report = new ExtentHtmlReporter("./Report/cadastroCliente.html");
+		extensao = new ExtentReports();
+		extensao.attachReporter(report);
+		logger = extensao.createTest("Cadastro Realizado!");
+		testName = new Throwable().getStackTrace()[0].getMethodName();
 	}
 
 	@Test
@@ -46,16 +45,16 @@ public class teste_cadastro {
 	}
 
 	@AfterMethod
-	  public void finalizaTeste(ITestResult resultado) throws Exception {
-        if (resultado.getStatus() == ITestResult.FAILURE) {
-            String tempo = Screenshot.getScreenshot(driver, testName );
-            logger.fail(resultado.getThrowable().getMessage(),
-                    MediaEntityBuilder.createScreenCaptureFromPath(tempo).build());
-        } else if (resultado.getStatus() == ITestResult.SUCCESS) {
-            String tempo = Screenshot.getScreenshot(driver, testName);
-            logger.pass(testName, MediaEntityBuilder.createScreenCaptureFromPath(tempo).build());
-        }
-        extensao.flush();
+	public void finalizaTeste(ITestResult resultado) throws Exception {
+		if (resultado.getStatus() == ITestResult.FAILURE) {
+			String tempo = Screenshot.getScreenshot(driver, testName);
+			logger.fail(resultado.getThrowable().getMessage(),
+					MediaEntityBuilder.createScreenCaptureFromPath(tempo).build());
+		} else if (resultado.getStatus() == ITestResult.SUCCESS) {
+			String tempo = Screenshot.getScreenshot(driver, testName);
+			logger.pass(testName, MediaEntityBuilder.createScreenCaptureFromPath(tempo).build());
+		}
+		extensao.flush();
 		driver.quit();
 	}
 

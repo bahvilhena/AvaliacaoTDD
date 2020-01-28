@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.hub_tdd.test.teste_consulta">
+      <class name="br.com.rsinet.hub_tdd.test.teste_cadastro">
         <methods>
+          <include name="Teste_Confirma"/>
           <include name="finalizaTeste"/>
-          <include name="consulta"/>
-          <include name="Teste_Busca_Negativo"/>
+          <include name="inicializarChrome"/>
+          <include name="Teste_NaoConfirma"/>
         </methods>
-      </class> <!-- br.com.rsinet.hub_tdd.test.teste_consulta -->
+      </class> <!-- br.com.rsinet.hub_tdd.test.teste_cadastro -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
